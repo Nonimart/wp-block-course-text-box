@@ -8,9 +8,36 @@
 	"supports": {
 		"html": false
 	},
-	"keyword": ["text-block", "text", "block"],
+	"keyword": [
+		"text-block",
+		"text",
+		"block"
+	],
 	"textdomain": "boilerplate",
 	"editorScript": "file:./build/index.js",
 	"editorStyle": "file:./build/index.css",
-	"style": "file:./build/style-index.css"
+	"style": "file:./build/style-index.css",
+	"attribute": {
+		"text": {
+			"type": "string",
+			"source": "html",
+			"selector": "h4"
+		},
+		"alignment": {
+			"type": "string",
+			"default": "left"
+		},
+		"inputValue": {
+			"type": "string"
+		},
+		"backgroundcolor": {
+			"type": "string",
+			"default": "#f82a2a"
+		},
+		"textcolor": {
+			"type": "string"
+		}
+		
+
+	}
 }

@@ -7,10 +7,18 @@
  *
  * Replace them with your own styles or remove the file completely.
  */
-.wp-block-create-block-boilerplate {
-  background-color: #21759b;
-  color: #fff;
+.wp-block-blocks-cours-text-box {
+  color: #f05;
   padding: 2px;
+}
+.wp-block-blocks-cours-text-box.text-box-align-right {
+  text-align: right;
+}
+.wp-block-blocks-cours-text-box.text-box-align-center {
+  text-align: center;
+}
+.wp-block-blocks-cours-text-box.text-box-align-left {
+  text-align: left;
 }
 
 /*# sourceMappingURL=style-index.css.map*/

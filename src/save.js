@@ -1,10 +1,18 @@
-import { __ } from '@wordpress/i18n';
-import { useBlockProps } from '@wordpress/block-editor';
+import { useBlockProps, RichText } from '@wordpress/block-editor';
 
-export default function save() {
+export default function save({ attributes }) {
+	const { text, alignment, textcolor, backgroundcolor } = attributes;
 	return (
-		<p {...useBlockProps.save()}>
-			{__('Boilerplate – hello from the saved content!', 'boilerplate')}
-		</p>
+		<RichText.Content
+			{...useBlockProps.save({
+				className: `text-box-align-${alignment}`,
+				style: {
+					backgroundColor: backgroundcolor,
+					color: textcolor,
+				},
+			})}
+			tagName="h4"
+			value={text}
+		/>
 	);
 }
