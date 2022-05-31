@@ -7,24 +7,27 @@ import {
 	InspectorControls,
 	PanelColorSettings,
 	ContrastChecker,
+	withColors,
 } from '@wordpress/block-editor';
 
 import './editor.scss';
 
-export default function Edit({ attributes, setAttributes }) {
-	const { text, alignment, textColor, backgroundColor } = attributes;
-
+function Edit(props) {
+	const {
+		attributes,
+		setAttributes,
+		backgroundColor,
+		textColor,
+		setBackgroundColor,
+		setTextColor,
+	} = props;
+	const { text, alignment } = attributes;
+	// console.log(props);
 	const onChangeAlign = (newAlignment) => {
 		setAttributes({ alignment: newAlignment });
 	};
 	const onChangeText = (newText) => {
 		setAttributes({ text: newText });
-	};
-	const onChangeBackgroundColor = (newBackgroundColor) => {
-		setAttributes({ backgroundColor: newBackgroundColor });
-	};
-	const onChangeTextColor = (newTextColor) => {
-		setAttributes({ textColor: newTextColor });
 	};
 
 	return (
@@ -34,22 +37,23 @@ export default function Edit({ attributes, setAttributes }) {
 					title={__('Color settings', 'text-box')}
 					icon="admin-appearance"
 					initialOpen
+					disableCustomColors={false}
 					colorSettings={[
 						{
-							value: backgroundColor,
-							onChange: onChangeBackgroundColor,
+							value: backgroundColor.color,
+							onChange: setBackgroundColor,
 							label: __('Background color', 'text-box'),
 						},
 						{
-							value: textColor,
-							onChange: onChangeTextColor,
+							value: textColor.color,
+							onChange: setTextColor,
 							label: __('Text color', 'text-box'),
 						},
 					]}
 				>
 					<ContrastChecker
-						textColor={textColor}
-						backgroundColor={backgroundColor}
+						textColor={textColor.color}
+						backgroundColor={backgroundColor.color}
 					/>
 				</PanelColorSettings>
 			</InspectorControls>
@@ -65,8 +69,16 @@ export default function Edit({ attributes, setAttributes }) {
 				placeholder={__('Your text', 'text-box')}
 				tagName="h4"
 				allowedFormats={[]}
-				style={{ backgroundColor, color: textColor }}
+				style={{
+					backgroundColor: backgroundColor.color,
+					color: textColor.color,
+				}}
 			/>
 		</>
 	);
 }
+
+export default withColors({
+	backgroundColor: 'backgroundColor',
+	textColor: 'color',
+})(Edit);
