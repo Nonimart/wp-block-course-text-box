@@ -6,6 +6,7 @@ import {
 	AlignmentToolbar,
 	InspectorControls,
 	PanelColorSettings,
+	ContrastChecker,
 } from '@wordpress/block-editor';
 
 import './editor.scss';
@@ -45,7 +46,12 @@ export default function Edit({ attributes, setAttributes }) {
 							label: __('Text color', 'text-box'),
 						},
 					]}
-				></PanelColorSettings>
+				>
+					<ContrastChecker
+						textColor={textColor}
+						backgroundColor={backgroundColor}
+					/>
+				</PanelColorSettings>
 			</InspectorControls>
 
 			<BlockControls group="block">
