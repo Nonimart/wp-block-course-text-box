@@ -5,13 +5,8 @@ import {
 	BlockControls,
 	AlignmentToolbar,
 	InspectorControls,
+	PanelColorSettings,
 } from '@wordpress/block-editor';
-import {
-	PanelBody,
-	TextControl,
-	TextareaControl,
-	ColorPalette,
-} from '@wordpress/components';
 
 import './editor.scss';
 
@@ -34,43 +29,23 @@ export default function Edit({ attributes, setAttributes }) {
 	return (
 		<>
 			<InspectorControls>
-				<PanelBody
+				<PanelColorSettings
 					title={__('Color settings', 'text-box')}
 					icon="admin-appearance"
 					initialOpen
-				>
-					<p>Ici inspector controls</p>
-					<TextControl
-						label="Input Label"
-						value={text}
-						onChange={onChangeText}
-						help="Ici la description qui aide l'utilisateur"
-					/>
-					<TextareaControl
-						label="Textarea Label"
-						value={text}
-						onChange={onChangeText}
-						help="Ici la description qui aide l'utilisateur"
-					/>
-					<p>Background color</p>
-					<ColorPalette
-						colors={[
-							{ name: 'red', color: '#F00' },
-							{ name: 'green', color: '#507463' },
-						]}
-						value={backgroundColor}
-						onChange={onChangeBackgroundColor}
-					/>
-					<p>Text color</p>
-					<ColorPalette
-						colors={[
-							{ name: 'red', color: '#F00' },
-							{ name: 'black', color: '#0f0' },
-						]}
-						value={textColor}
-						onChange={onChangeTextColor}
-					/>
-				</PanelBody>
+					colorSettings={[
+						{
+							value: backgroundColor,
+							onChange: onChangeBackgroundColor,
+							label: __('Background color', 'text-box'),
+						},
+						{
+							value: textColor,
+							onChange: onChangeTextColor,
+							label: __('Text color', 'text-box'),
+						},
+					]}
+				></PanelColorSettings>
 			</InspectorControls>
 
 			<BlockControls group="block">
