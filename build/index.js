@@ -36,8 +36,8 @@ function Edit(_ref) {
   const {
     text,
     alignment,
-    textcolor,
-    backgroundcolor
+    textColor,
+    backgroundColor
   } = attributes;
 
   const onChangeAlign = newAlignment => {
@@ -54,13 +54,13 @@ function Edit(_ref) {
 
   const onChangeBackgroundColor = newBackgroundColor => {
     setAttributes({
-      backgroundcolor: newBackgroundColor
+      backgroundColor: newBackgroundColor
     });
   };
 
   const onChangeTextColor = newTextColor => {
     setAttributes({
-      textcolor: newTextColor
+      textColor: newTextColor
     });
   };
 
@@ -83,10 +83,10 @@ function Edit(_ref) {
       name: 'red',
       color: '#F00'
     }, {
-      name: 'black',
-      color: '#000'
+      name: 'green',
+      color: '#507463'
     }],
-    value: backgroundcolor,
+    value: backgroundColor,
     onChange: onChangeBackgroundColor
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("p", null, "Text color"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.ColorPalette, {
     colors: [{
@@ -96,7 +96,7 @@ function Edit(_ref) {
       name: 'black',
       color: '#0f0'
     }],
-    value: textcolor,
+    value: textColor,
     onChange: onChangeTextColor
   }))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.BlockControls, {
     group: "block"
@@ -112,8 +112,8 @@ function Edit(_ref) {
     tagName: "h4",
     allowedFormats: [],
     style: {
-      backgroundColor: backgroundcolor,
-      color: textcolor
+      backgroundColor,
+      color: textColor
     }
   })));
 }
@@ -184,14 +184,14 @@ function save(_ref) {
   const {
     text,
     alignment,
-    textcolor,
-    backgroundcolor
+    textColor,
+    backgroundColor
   } = attributes;
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, (0,_babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps.save({
     className: `text-box-align-${alignment}`,
     style: {
-      backgroundColor: backgroundcolor,
-      color: textcolor
+      backgroundColor,
+      color: textColor
     }
   }), {
     tagName: "h4",

@@ -30,11 +30,11 @@
 		"inputValue": {
 			"type": "string"
 		},
-		"backgroundcolor": {
+		"backgroundColor": {
 			"type": "string",
 			"default": "#f82a2a"
 		},
-		"textcolor": {
+		"textColor": {
 			"type": "string",
 			"default": "#000"
 		}

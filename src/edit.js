@@ -16,7 +16,7 @@ import {
 import './editor.scss';
 
 export default function Edit({ attributes, setAttributes }) {
-	const { text, alignment, textcolor, backgroundcolor } = attributes;
+	const { text, alignment, textColor, backgroundColor } = attributes;
 
 	const onChangeAlign = (newAlignment) => {
 		setAttributes({ alignment: newAlignment });
@@ -25,10 +25,10 @@ export default function Edit({ attributes, setAttributes }) {
 		setAttributes({ text: newText });
 	};
 	const onChangeBackgroundColor = (newBackgroundColor) => {
-		setAttributes({ backgroundcolor: newBackgroundColor });
+		setAttributes({ backgroundColor: newBackgroundColor });
 	};
 	const onChangeTextColor = (newTextColor) => {
-		setAttributes({ textcolor: newTextColor });
+		setAttributes({ textColor: newTextColor });
 	};
 
 	return (
@@ -56,9 +56,9 @@ export default function Edit({ attributes, setAttributes }) {
 					<ColorPalette
 						colors={[
 							{ name: 'red', color: '#F00' },
-							{ name: 'black', color: '#000' },
+							{ name: 'green', color: '#507463' },
 						]}
-						value={backgroundcolor}
+						value={backgroundColor}
 						onChange={onChangeBackgroundColor}
 					/>
 					<p>Text color</p>
@@ -67,7 +67,7 @@ export default function Edit({ attributes, setAttributes }) {
 							{ name: 'red', color: '#F00' },
 							{ name: 'black', color: '#0f0' },
 						]}
-						value={textcolor}
+						value={textColor}
 						onChange={onChangeTextColor}
 					/>
 				</PanelBody>
@@ -84,7 +84,7 @@ export default function Edit({ attributes, setAttributes }) {
 				placeholder={__('Your text', 'text-box')}
 				tagName="h4"
 				allowedFormats={[]}
-				style={{ backgroundColor: backgroundcolor, color: textcolor }}
+				style={{ backgroundColor, color: textColor }}
 			/>
 		</>
 	);

@@ -1,14 +1,14 @@
 import { useBlockProps, RichText } from '@wordpress/block-editor';
 
 export default function save({ attributes }) {
-	const { text, alignment, textcolor, backgroundcolor } = attributes;
+	const { text, alignment, textColor, backgroundColor } = attributes;
 	return (
 		<RichText.Content
 			{...useBlockProps.save({
 				className: `text-box-align-${alignment}`,
 				style: {
-					backgroundColor: backgroundcolor,
-					color: textcolor,
+					backgroundColor,
+					color: textColor,
 				},
 			})}
 			tagName="h4"
