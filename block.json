@@ -17,7 +17,7 @@
 	"editorScript": "file:./build/index.js",
 	"editorStyle": "file:./build/index.css",
 	"style": "file:./build/style-index.css",
-	"attribute": {
+	"attributes": {
 		"text": {
 			"type": "string",
 			"source": "html",
@@ -35,7 +35,8 @@
 			"default": "#f82a2a"
 		},
 		"textcolor": {
-			"type": "string"
+			"type": "string",
+			"default": "#000"
 		}
 		
 
