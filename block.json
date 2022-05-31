@@ -6,7 +6,13 @@
 	"icon": "text-page",
 	"description": "Bloc de Text Box pour le cours Blocks",
 	"supports": {
-		"html": false
+		"html": false,
+		"color":{
+			"background": true,
+			"text": true,
+			"gradients": true
+		}
+
 	},
 	"keyword": [
 		"text-block",
@@ -32,20 +38,12 @@
 		},
 		"backgroundColor": {
 			"type": "string",
-			"default": "#f82a2a"
+			"default": "primary"
 		},
 		"textColor": {
 			"type": "string",
-			"default": "#000"
-		},
-		"customTextColor": {
-			"type": "string"
-		},
-		"customBackgroundColor": {
-			"type": "string"
+			"default": "secondary"
 		}
-		
-		
 
 	}
 }
