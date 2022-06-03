@@ -7,6 +7,28 @@
 
 .wp-block-blocks-cours-text-box {
 	// background-color: #21759b;
+	margin-top: 20px;
+
+	&.has-shadow {
+		box-shadow: rgba(0, 0, 0, 0.3) 0 3px 8px;
+
+		&.shadow-opacity-10 {
+			box-shadow: rgba(0, 0, 0, 0.1) 0 3px 8px;
+		}
+
+		&.shadow-opacity-20 {
+			box-shadow: rgba(0, 0, 0, 0.2) 0 3px 8px;
+		}
+
+		&.shadow-opacity-30 {
+			box-shadow: rgba(0, 0, 0, 0.3) 0 3px 8px;
+		}
+
+		&.shadow-opacity-40 {
+			box-shadow: rgba(0, 0, 0, 0.4) 0 3px 8px;
+		}
+	}
+
 	.text-box-title {
 		margin: 0;
 	}

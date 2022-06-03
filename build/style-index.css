@@ -7,6 +7,24 @@
  *
  * Replace them with your own styles or remove the file completely.
  */
+.wp-block-blocks-cours-text-box {
+  margin-top: 20px;
+}
+.wp-block-blocks-cours-text-box.has-shadow {
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 3px 8px;
+}
+.wp-block-blocks-cours-text-box.has-shadow.shadow-opacity-10 {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 8px;
+}
+.wp-block-blocks-cours-text-box.has-shadow.shadow-opacity-20 {
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 8px;
+}
+.wp-block-blocks-cours-text-box.has-shadow.shadow-opacity-30 {
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 3px 8px;
+}
+.wp-block-blocks-cours-text-box.has-shadow.shadow-opacity-40 {
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 3px 8px;
+}
 .wp-block-blocks-cours-text-box .text-box-title {
   margin: 0;
 }
