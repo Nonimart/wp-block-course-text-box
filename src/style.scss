@@ -7,8 +7,9 @@
 
 .wp-block-blocks-cours-text-box {
 	// background-color: #21759b;
-	color: #f05;
-	padding: 2px;
+	.text-box-title {
+		margin: 0;
+	}
 
 	&.text-box-align-right {
 		text-align: right;

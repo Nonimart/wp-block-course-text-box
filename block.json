@@ -11,8 +11,10 @@
 			"background": true,
 			"text": true,
 			"gradients": true
+		},
+		"spacing": {
+				"padding": true
 		}
-
 	},
 	"keyword": [
 		"text-block",
@@ -33,16 +35,27 @@
 			"type": "string",
 			"default": "left"
 		},
-		"inputValue": {
-			"type": "string"
-		},
 		"backgroundColor": {
-			"type": "string",
-			"default": "primary"
+			"type": "string"
+		
 		},
 		"textColor": {
 			"type": "string",
 			"default": "secondary"
+		},
+		"gradient": {
+			"type": "string"
+		},
+		"style": {
+			"type": "object",
+			"default": {
+				"color": {
+					"background": "#f03"
+				},
+				"spacing": {
+					"padding": {"top":"50px","right":"50px","bottom":"50px","left":"50px"}
+				}
+			}
 		}
 
 	}

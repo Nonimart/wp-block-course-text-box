@@ -7,12 +7,12 @@ export default function save({ attributes }) {
 	const classes = classnames(`text-box-align-${alignment}`);
 
 	return (
-		<RichText.Content
+		<div
 			{...useBlockProps.save({
 				className: classes,
 			})}
-			tagName="h4"
-			value={text}
-		/>
+		>
+			<RichText.Content tagName="h4" value={text} />
+		</div>
 	);
 }
