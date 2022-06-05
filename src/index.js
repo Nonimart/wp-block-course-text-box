@@ -3,6 +3,8 @@ import { __ } from '@wordpress/i18n';
 import './style.scss';
 import Edit from './edit';
 import save from './save';
+import v1 from './v1';
+import v2 from './v2';
 
 registerBlockType('blocks-cours/text-box', {
 	icon: {
@@ -20,6 +22,7 @@ registerBlockType('blocks-cours/text-box', {
 	},
 	edit: Edit,
 	save,
+	deprecated: [v2, v1],
 	variations: [
 		{
 			name: 'blocks-cours/gradient-text-box',
@@ -50,7 +53,7 @@ registerBlockType('blocks-cours/text-box', {
 				transform: ({ content, align }) => {
 					return createBlock('blocks-cours/text-box', {
 						text: content,
-						alignment: align,
+						textAlignment: align,
 					});
 				},
 			},
@@ -79,10 +82,10 @@ registerBlockType('blocks-cours/text-box', {
 				isMatch: ({ text }) => {
 					return text ? true : false;
 				},
-				transform: ({ text, alignment }) => {
+				transform: ({ text, textAlignment }) => {
 					return createBlock('core/paragraph', {
 						content: text,
-						align: alignment,
+						align: textAlignment,
 					});
 				},
 			},

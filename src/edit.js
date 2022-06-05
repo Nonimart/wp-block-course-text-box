@@ -8,6 +8,7 @@ import {
 } from '@wordpress/block-editor';
 //eslint-disable-next-line
 import {
+	//eslint-disable-next-line
 	__experimentalBoxControl as BoxControl,
 	PanelBody,
 	RangeControl,
@@ -19,9 +20,9 @@ const { __Visualizer: BoxControlVisualizer } = BoxControl;
 
 export default function Edit(props) {
 	const { attributes, setAttributes } = props;
-	const { text, alignment, style, shadow, shadowOpacity } = attributes;
+	const { text, textAlignment, style, shadow, shadowOpacity } = attributes;
 	const onChangeAlign = (newAlignment) => {
-		setAttributes({ alignment: newAlignment });
+		setAttributes({ textAlignment: newAlignment });
 	};
 	const onChangeText = (newText) => {
 		setAttributes({ text: newText });
@@ -32,7 +33,7 @@ export default function Edit(props) {
 	const onChangeShadowOpacity = (newShadowOpacity) => {
 		setAttributes({ shadowOpacity: newShadowOpacity });
 	};
-	const classes = classnames(`text-box-align-${alignment}`, {
+	const classes = classnames(`text-box-align-${textAlignment}`, {
 		'has-shadow': shadow,
 		[`shadow-opacity-${shadowOpacity}`]: shadow && shadowOpacity,
 	});
@@ -63,7 +64,10 @@ export default function Edit(props) {
 					},
 				]}
 			>
-				<AlignmentToolbar value={alignment} onChange={onChangeAlign} />
+				<AlignmentToolbar
+					value={textAlignment}
+					onChange={onChangeAlign}
+				/>
 			</BlockControls>
 			<div {...useBlockProps({ className: classes })}>
 				<RichText
@@ -71,7 +75,7 @@ export default function Edit(props) {
 					onChange={onChangeText}
 					value={text}
 					placeholder={__('Your text', 'text-box')}
-					tagName="h4"
+					tagName="p"
 					allowedFormats={[]}
 				/>
 				{/* En Sibling il est positionné en absolute */}

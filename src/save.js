@@ -2,9 +2,9 @@ import { useBlockProps, RichText } from '@wordpress/block-editor';
 import classnames from 'classnames';
 
 export default function save({ attributes }) {
-	const { text, alignment, shadow, shadowOpacity } = attributes;
+	const { text, textAlignment, shadow, shadowOpacity } = attributes;
 
-	const classes = classnames(`text-box-align-${alignment}`, {
+	const classes = classnames(`text-box-align-${textAlignment}`, {
 		'has-shadow': shadow,
 		[`shadow-opacity-${shadowOpacity}`]: shadow && shadowOpacity,
 	});
@@ -15,7 +15,7 @@ export default function save({ attributes }) {
 				className: classes,
 			})}
 		>
-			<RichText.Content tagName="h4" value={text} />
+			<RichText.Content tagName="p" value={text} />
 		</div>
 	);
 }
