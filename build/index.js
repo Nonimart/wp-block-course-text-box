@@ -75,9 +75,9 @@ function Edit(props) {
     [`shadow-opacity-${shadowOpacity}`]: shadow && shadowOpacity
   });
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, null, shadow && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
-    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Shadow Settings", 'text-box')
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Shadow Settings', 'text-box')
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Shadow Opacity", 'text-box'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Shadow Opacity', 'text-box'),
     value: shadowOpacity,
     min: 10,
     max: 40,
@@ -85,7 +85,7 @@ function Edit(props) {
     onChange: onChangeShadowOpacity
   }))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.BlockControls, {
     controls: [{
-      icon: "admin-page",
+      icon: 'admin-page',
       title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Shadow', 'text-box'),
       onClick: toggleShadow,
       isActive: shadow
@@ -123,9 +123,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
 /* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./style.scss */ "./src/style.scss");
-/* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./edit */ "./src/edit.js");
-/* harmony import */ var _save__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./save */ "./src/save.js");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./style.scss */ "./src/style.scss");
+/* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./edit */ "./src/edit.js");
+/* harmony import */ var _save__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./save */ "./src/save.js");
+
 
 
 
@@ -145,8 +148,79 @@ __webpack_require__.r(__webpack_exports__);
     background: '#f03',
     foreground: '#fff'
   },
-  edit: _edit__WEBPACK_IMPORTED_MODULE_3__["default"],
-  save: _save__WEBPACK_IMPORTED_MODULE_4__["default"]
+  edit: _edit__WEBPACK_IMPORTED_MODULE_4__["default"],
+  save: _save__WEBPACK_IMPORTED_MODULE_5__["default"],
+  variations: [{
+    name: "blocks-cours/gradient-text-box",
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Gradient Text Box"),
+    icon: {
+      src: (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
+        version: "1.1",
+        viewBox: "0 0 500 500",
+        preserveAspectRatio: "xMinYMin meet"
+      }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("circle", {
+        cx: "250",
+        cy: "250",
+        r: "200"
+      })),
+      background: '#3f0',
+      foreground: '#fff'
+    },
+    attributes: {
+      gradient: "vivid-cyan-blue-to-vivid-purple"
+    }
+  }],
+  transforms: {
+    from: [{
+      type: "block",
+      blocks: ["core/paragraph"],
+      transform: _ref => {
+        let {
+          content,
+          align
+        } = _ref;
+        return (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__.createBlock)("blocks-cours/text-box", {
+          text: content,
+          alignment: align
+        });
+      }
+    }, {
+      type: "enter",
+      regExp: /textbox/i,
+      transform: () => {
+        return (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__.createBlock)("blocks-cours/text-box", {
+          shadow: true,
+          gradient: 'light-green-cyan-to-vivid-green-cyan'
+        });
+      }
+    }, {
+      type: "prefix",
+      prefix: "textbox",
+      transform: () => {
+        return (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__.createBlock)("blocks-cours/text-box");
+      }
+    }],
+    to: [{
+      type: "block",
+      blocks: ["core/paragraph"],
+      isMatch: _ref2 => {
+        let {
+          text
+        } = _ref2;
+        return text ? true : false;
+      },
+      transform: _ref3 => {
+        let {
+          text,
+          alignment
+        } = _ref3;
+        return (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__.createBlock)("core/paragraph", {
+          content: text,
+          align: alignment
+        });
+      }
+    }]
+  }
 });
 
 /***/ }),

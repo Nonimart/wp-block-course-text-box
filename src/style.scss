@@ -9,6 +9,14 @@
 	// background-color: #21759b;
 	margin-top: 20px;
 
+	&.is-style-squared {
+		border-radius: 0;
+	}
+
+	&.is-style-rounded {
+		border-radius: 10px;
+	}
+
 	&.has-shadow {
 		box-shadow: rgba(0, 0, 0, 0.3) 0 3px 8px;
 

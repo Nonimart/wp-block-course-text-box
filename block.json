@@ -16,6 +16,24 @@
 				"padding": true
 		}
 	},
+	"styles": [
+		{
+			"name":"squared",
+			"label":"Squared",
+			"isDefault":true
+		},
+		{
+			"name":"rounded",
+			"label":"Rounded"
+		}
+		
+	],
+	"example":{
+			"attributes" : {
+				"text": "Mon texte de démonstration",
+				"shadow": true
+			}
+	},
 	"keyword": [
 		"text-block",
 		"text",
